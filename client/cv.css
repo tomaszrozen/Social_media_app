@@ -1,0 +1,193 @@
+p, ul {
+  margin: 0;
+}
+
+#profile_link {
+  display: inline;
+}
+
+.cv, .cv_info {
+  width: 21cm;
+  margin: auto;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+  overflow-x: auto;
+  background-color: white;
+  padding: 3rem;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+}
+
+.header {
+  text-align: center;
+}
+
+h1 {
+  margin: 0;
+}
+
+h2 {
+  text-decoration: underline;
+  margin: 5px 0 10px 0;
+}
+
+h3 {
+  margin: 5px 0 0 0;
+}
+
+.place {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: 0 0 15px 0;
+}
+
+.place .left {
+  grid-column: 1;
+}
+
+.place .left p:first-of-type {
+  font-weight: bold;
+}
+
+.place .right {
+  grid-column: 2;
+}
+
+.experience {
+  grid-area: experience;
+  display: grid;
+  grid-template-areas: 
+    "experience-title"
+    "single_experience";
+}
+
+.experience h2 {
+  grid-area: experience-title;
+}
+
+.single_experience {
+  display: grid;
+  grid-template-areas: 
+    "place_position place_position"
+    "p p"
+    "h3_first h3_second"
+    "tasks achievements";
+    grid-template-columns: 1fr 1fr;
+  margin: 0 0 25px 0;
+}
+
+.single_experience .place_position {
+  grid-area: place_position;
+  display: flex;
+  justify-content: space-between;
+}
+
+.single_experience p {
+  grid-area: p;
+}
+
+.single_experience h3:first-of-type {
+  grid-area: h3_first;
+}
+
+.single_experience h3:nth-of-type(2) {
+  grid-area: h3_second;
+}
+
+.single_experience .tasks {
+  grid-area: tasks;
+}
+
+.single_experience .achievements {
+  grid-area: achievements;
+}
+
+.single_experience .place_position p {
+  margin: 0;
+  font-weight: bold;
+}
+
+.licenses {
+  grid-area: licenses;
+  display: grid;
+  grid-template-areas: 
+    "licenses-title"
+    "licence";
+}
+
+.licenses h2 {
+  grid-area: licenses-title;
+}
+
+.licence {
+  display: grid;
+  grid-template-columns: 2fr 1fr 2fr;
+  margin: 0 0 15px 0;
+}
+
+.licence .left {
+  grid-column: 1;
+}
+
+.licence .left p:first-of-type {
+  font-weight: bold;
+}
+
+.licence .middle {
+  grid-column: 2;
+  text-align: center;
+}
+
+.licence .right {
+  grid-column: 3;
+}
+
+.skills {
+  margin: 0 0 15px 0;
+}
+
+.skill {
+  display: flex;
+}
+
+.skill p {
+  margin: 0;
+  margin-right: 5px;
+}
+
+.skill p:nth-child(1) {
+  font-weight: bold;
+}
+
+.cv .btn {
+  display: none;
+}
+
+.section_for_hover:hover .btn {
+  display: block;
+}
+
+@media print {
+  body * {
+    visibility: hidden;
+  }
+
+  .cv, .cv * {
+    visibility: visible;
+  }
+
+  .cv {
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: 0 0;
+    border-radius: 0;
+    box-shadow: none;
+    margin-bottom: 0;
+  }
+
+  [contenteditable]:focus {
+    outline: none;
+  }
+}

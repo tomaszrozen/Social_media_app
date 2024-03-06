@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>START PAGE</title>
+  </head>
+  <body>
+    <div
+      class="container-fluid d-flex flex-column flex-lg-row justify-content-evenly align-items-lg-stretch align-items-sm-center mt-5 pt-5"
+    >
+      <div class="text-center text-lg-start mt-lg-5 pt-lg-5">
+        <h1 class="text-primary fw-bold">SOCIAL MEDIA APP</h1>
+        <p class="w-75 mx-auto mx-lg-0 fs-4">Meet your friends online.</p>
+      </div>
+      <div style="max-width: 28rem; width: 100%">
+        <div class="bg-white shadow rounded p-3 input-grroup-lg">
+          <form action="/auth/login" id="loginForm">
+            <input
+              type="email"
+              name="email"
+              class="form-control my-3"
+              placeholder="Email address"
+              required
+            />
+            <input
+              type="password"
+              name="password"
+              class="form-control my-3"
+              placeholder="Password"
+              required
+            />
+            <button type="submit" class="btn btn-primary w-100 my-3">
+              Log in
+            </button>
+          </form>
+          <hr />
+          <div class="text-center my-4">
+            <button
+              class="btn btn-success w-100 my-3"
+              type="button"
+              data-bs-toggle="modal"
+              data-bs-target="#createModal"
+            >
+              Create New Account
+            </button>
+          </div>
+          <!-- create modal for registration -->
+          <div
+            class="modal fade"
+            id="createModal"
+            tabindex="-1"
+            aria-labelledby="createModalLabel"
+            aria-hidden="true"
+          >
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <!-- head -->
+                <div class="modal-header">
+                  <div>
+                    <h2 class="modal-title" id="modalLabel">Sign Up</h2>
+                  </div>
+                  <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                  ></button>
+                </div>
+                <!-- body -->
+                <div class="modal-body">
+                  <!-- form -->
+                  <form
+                    id="registrationForm"
+                    action="/auth/register"
+                    method="post"
+                    encype="multipart/form-data"
+                  >
+                    <!-- names -->
+                    <div class="row">
+                      <div class="col">
+                        <input type="text" id="firstName" name="firstName"
+                        class="form-control" placeholder="First name" required
+                        />
+                      </div>
+                      <div class="col">
+                        <input type="text" id="lastName"
+                        name="lastName"class="form-control" 
+                        placeholder="Last name" required 
+                        />
+                      </div>
+                    </div>
+                    <!-- email & pass -->
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      class="form-control my-3"
+                      placeholder="Email address"
+                      required
+                    />
+                    <input
+                      type="password"
+                      id="password"
+                      name="password"
+                      class="form-control my-3"
+                      placeholder="Password"
+                      required
+                    />
+                    <!-- DOB -->
+                    <label for="dob">Date of Birth:</label>
+                    <input
+                      type="date"
+                      class="form-control"
+                      id="dob"
+                      name="dob"
+                      required
+                    />
+                    <!-- gender -->
+                    <div class="row my-3">
+                      <span class="text-muted fs-7"
+                        >Gender
+                        <i
+                          class="fas fa-question-circle"
+                          data-bs-toggle="popover"
+                          type="button"
+                        ></i>
+                      </span>
+                      <div class="col">
+                        <div class="border rounded p-2">
+                          <label class="form-check-label" for="male">
+                            Male
+                          </label>
+                          <input
+                            class="form-check-input"
+                            type="radio"
+                            name="gender"
+                            id="male"
+                            value="male"
+                            required
+                          />
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="border rounded p-2">
+                          <label class="form-check-label" for="female">
+                            Female
+                          </label>
+                          <input
+                            class="form-check-input"
+                            type="radio"
+                            name="gender"
+                            id="female"
+                            value="female"
+                            required
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    <!-- img upload -->
+                    <div class="mb-2">
+                      <label for="userImg">Photo to upload</label>
+                      <input
+                        type="file"
+                        class="form-control-file"
+                        id="userImg"
+                        name="userImg"
+                        accept="image/*"
+                      />
+                    </div>
+                    <!-- end upload -->
+                    <!-- btn -->
+                    <div class="text-center mt-3">
+                      <button
+                        type="submit"
+                        class="btn btn-success btn-lg"
+                      >
+                        Sign Up
+                      </button>
+                    </div>
+                  </form>
+                  <!-- end form -->
+                  
+                </div>
+                <div id="errorMessageRegister" class="mx-2"></div>
+              </div>
+            </div>
+          </div>
+          <!-- modal end -->
+          <div id="errorMessageLogin"></div>
+        </div>
+      </div>
+      <!-- Footer -->
+      <footer class="fixed-bottom">
+        <!-- Copyright -->
+        <div
+          class="text-center p-3"
+          style="background-color: rgba(0, 0, 0, 0.293)"
+        >
+        © 2023 Copyright: Michał Nawara, Krzysztof Cioroch, Tomasz Rożeń
+        </div>
+      </footer>
+      <!-- Footer end -->
+    </div>
+    <script src="JSfiles/login.js" type="text/javascript"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

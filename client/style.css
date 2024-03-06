@@ -1,0 +1,94 @@
+.home_background {
+  background-image: url("./images/bg_image.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+.overlay {
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 10px;
+  padding: 1rem;
+}
+
+.profile-background {
+  background-image: url("images/userBackgroundImageExample.png");
+  background-size: cover;
+  background-position: center;
+  height: 18rem;
+  margin-bottom: -8rem;
+  border-radius: 10px;
+  margin-top: 2rem;
+}
+.profile-image {
+  max-width: 150px;
+  max-height: 150px;
+  min-width: 80px;
+  min-height: 80px;
+  border-radius: 50%;
+  background-color: #fff;
+  overflow: hidden;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+}
+.profile-image img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+}
+.profile-details {
+  padding: 3rem;
+  background-color: #fff;
+  margin-top: -30px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+}
+
+.likeButton {
+  border:none;
+  font-weight: 900;
+  font-family: sans-serif;
+}
+.likeButton:hover {
+  transform: scale(1.1);
+}
+.bi-hand-thumbs-up-fill{
+  color: transparent;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: black;
+}
+
+.likeButton:hover .bi-hand-thumbs-up-fill {
+  color: #006AFF;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: #006AFF;
+}
+
+.likeButton.liked .bi-hand-thumbs-up-fill {
+  color: #006AFF !important;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: #006AFF !important; 
+}
+
+.searchedUser:hover {
+  background-color: rgb(217, 230, 240);
+  cursor: pointer;
+}
+
+.friendLink {
+  text-decoration: none;
+  color: black;
+}
+
+.friendLink:hover{
+  color: rgb(0, 98, 255);
+}
+
+@media screen and (min-width: 768px) {
+  #searchForm {
+    width: 25%;
+  }
+}
+
